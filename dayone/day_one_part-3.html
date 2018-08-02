@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue js Day-1 Part-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 1050px;
+            background: lightgreen;
+            margin: 0 auto;
+            padding: 50px;
+            min-height: 545px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid black;
+            padding-bottom: 10px;
+        }
+
+        .main_container {
+            min-height: 448px;
+        }
+        ul{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .active{
+            color: red;
+            font-size: 18px;
+        }
+
+        .footer {
+            text-align: center;
+            border-top: 1px solid #000;
+            padding: 10px;
+        }
+    </style>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Vue js Day-1 Part-3</h1>
+            <p>Class and Attribute Binding</p>
+        </div>
+
+
+        <div class="main_container">
+            <div id="app">
+                <ul>
+                    <!--- =====  V-bind shortend form :-->
+                    <li><a  :class="{'active': activeLink=='link1' }" v-bind:href="linkOne.url" v-bind:title="linkOne.title">{{linkOne.text}}</a></li>
+                    <li><a :class="{'active': activeLink=='link2' }" v-bind:href="linkTwo.url" v-bind:title="linkTwo.title">{{linkTwo.text}}</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            @Copy Kawshar Ahmed
+        </div>
+    </div>
+
+
+
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            
+                        linkOne:{
+                            text:"facebook",
+                            title:'Go to facebook',
+                            url:'http:www.facebook.com'
+                        },
+                    linkTwo:{
+                        text:'google',
+                        title:'Go to google',
+                        url:'http:www.google.com'
+                    },
+                
+                activeLink:"link1",
+            
+                
+            
+            }
+        });
+    </script>
+
+</body>
+
+</html>
